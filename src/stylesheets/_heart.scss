@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(215, 185, 142);
+}
+
+.heart {
+  position: fixed;
+  width: 100px;
+  height: 90px;
+  animation: beating-small 1s ease-in-out infinite;
+  &::before,
+  &::after {
+  	position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: rgb(203, 64, 66);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+  &::after {
+    left: 0;
+		transform: rotate(45deg);
+    transform-origin: 100% 100%;
+  }
+}
+
+@keyframes beating-small {
+  0% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(1.5);
+  }
+}
