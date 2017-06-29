@@ -1,10 +1,12 @@
+body {
+  background-color: #d7b98e; }
+
 .heart {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: fixed;
   width: 100px;
   height: 90px;
-  animation: beating-small 1s ease-in-out infinite; }
+  -webkit-animation: beating 1s ease-in-out infinite;
+  animation: beating 1s ease-in-out infinite; }
   .heart::before, .heart::after {
     position: absolute;
     content: "";
@@ -14,17 +16,29 @@
     height: 80px;
     background: #cb4042;
     border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
     transform-origin: 0 100%; }
   .heart::after {
     left: 0;
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
     transform-origin: 100% 100%; }
 
-@keyframes beating-small {
+@-webkit-keyframes beating {
   0% {
+    -webkit-transform: scale(1);
     transform: scale(1); }
   50% {
+    -webkit-transform: scale(1.5);
     transform: scale(1.5); } }
 
-/*# sourceMappingURL=style.css.map*/
+@keyframes beating {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5); } }

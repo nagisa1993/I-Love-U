@@ -6,7 +6,7 @@ body {
   position: fixed;
   width: 100px;
   height: 90px;
-  animation: beating-small 1s ease-in-out infinite;
+  animation: beating 1s ease-in-out infinite;
   &::before,
   &::after {
   	position: absolute;
@@ -27,7 +27,7 @@ body {
   }
 }
 
-@keyframes beating-small {
+@keyframes beating {
   0% {
     transform: scale(1);
   }

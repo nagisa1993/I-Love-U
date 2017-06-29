@@ -2,7 +2,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	entry: './src/index.js',
-    devtool: 'source-map',
+    // devtool: 'source-map',
 	output: {
 		filename: './dist/i-love-u.js'
         //,
@@ -14,10 +14,18 @@ module.exports = {
 			{
 				test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "babel-loader", // Do not use "use" here
+                loader: 'babel-loader', // Do not use "use" here
                 query: {
                     presets: ['es2015']
                 }
+            },
+            {
+            	test: /\.css$/,
+            	exclude: /node_modules/,
+            	use: [
+	            	'style-loader',
+	            	'css-loader'
+            	]
             },
             {
                 test: /\.scss$/,
@@ -25,8 +33,8 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
-                        'css-loader?sourceMap', 
-                        'sass-loader?sourceMap',
+                        'css-loader', 
+                        'sass-loader',
                         'postcss-loader'
                     ]
                 })

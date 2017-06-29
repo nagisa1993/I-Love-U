@@ -1,4 +1,4 @@
-import './stylesheets/_heart.scss';
+import '../dist/style.css';
 
 window.onload = () =>{
   window.addEventListener('click', (e) => {
